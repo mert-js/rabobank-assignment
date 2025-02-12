@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+  --color-rabo-dark-blue: #000ea8;
+  --color-rabo-light-blue: #0059ff;
+  --color-rabo-orange: #ff6600;
+  --color-rabo-gray: #f6f6f6;
+}
+
+body {
+  background-color: var(--color-rabo-gray);
+}
