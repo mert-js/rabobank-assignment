@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Transaction } from '../models/transaction.model';
 
 @Injectable({
@@ -12,6 +12,14 @@ export class TransactionService {
   constructor(private http: HttpClient) { }
 
   getTransactions(): Observable<Transaction[]> {
-    return this.http.get<any>(this.API_URL);
+    return this.http.get<{ days: { id: string, transactions: Transaction[] }[] }>(this.API_URL).pipe(
+      map(response => response.days.flatMap(({ id: date, transactions }) =>
+        transactions.map(transaction => ({
+          ...transaction,
+          date,
+          amount: transaction.currencyCode === 'USD' ? transaction.amount * (transaction.currencyRate ?? 1) : transaction.amount
+        }))
+      ))
+    );
   }
 }

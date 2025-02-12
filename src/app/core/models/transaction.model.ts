@@ -1,6 +1,7 @@
 import { OtherParty } from './other-party.model';
 
 export interface Transaction {
+  date: string;
   id: number;
   timestamp: string;
   amount: number;
