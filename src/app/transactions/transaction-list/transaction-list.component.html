@@ -1,20 +1,10 @@
 <div>
   <h2 class="text-xl tracking-tight text-rabo-light-blue italic sm:text-3xl mb-5">Rabo DirectRekening</h2>
-</div>
-<div>
-  <a href="#" class="block max-w bg-white rounded-xs shadow-sm p-4 text-rabo-dark-blue font-semibold">
-    Toekomst
+  <a href="#" class="block max-w bg-white rounded-xs shadow-sm p-4 mb-4">
+    <span class="text-rabo-dark-blue font-semibold">Toekomst</span>
   </a>
 </div>
 
-  <!-- @for (group of transactions; track $index) {
-    {{ group.id }}
-    <ul>
-      @for (transaction of group.transactions; track $index) {
-        <li>
-          {{ transaction.otherParty?.name }} - {{ transaction.amount }}
-        </li>
-      }
-    </ul>
-  } -->
-
+@for (transactions of transactionsByDay; track $index) {
+  <app-transaction-card [transactionsByDay]="transactions"></app-transaction-card>
+}
