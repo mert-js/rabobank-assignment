@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Transaction } from '../../core/models/transaction.model';
+import { Transactions } from '../../core/models/transactions.model';
 import { TransactionService } from '../../core/services/transaction.service';
 
 @Component({
@@ -9,12 +9,12 @@ import { TransactionService } from '../../core/services/transaction.service';
   styleUrl: './transaction-list.component.css'
 })
 export class TransactionListComponent {
-  transactions: Transaction[] = [];
+  transactionsByDay: Transactions[] = [];
 
   private transactionService = inject(TransactionService);
 
   ngOnInit() {
-    this.transactionService.getTransactions().subscribe(data => this.transactions = data);
+    this.transactionService.getTransactions().subscribe(data => this.transactionsByDay = data);
   }
 
 }
