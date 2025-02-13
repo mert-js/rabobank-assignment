@@ -5,5 +5,5 @@ import { TransactionDetailComponent } from './transactions/transaction-detail/tr
 export const routes: Routes = [
   { path: '', redirectTo: 'transactions', pathMatch: 'full' },
   { path: 'transactions', component: TransactionListComponent },
-  { path: 'transactions/:id', component: TransactionDetailComponent }
+  { path: 'transactions/:date/:id', component: TransactionDetailComponent }
 ];

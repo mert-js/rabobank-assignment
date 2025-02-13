@@ -1,12 +1,15 @@
-<div class="transacton-card block max-w bg-white rounded-xs shadow-sm p-4 mb-2">
-  <span class="text-rabo-dark-blue font-semibold">{{ transactionsByDay.id | date: 'longDate' }}</span>
+<div class="transaction-card block max-w bg-white rounded-sm shadow-sm p-8 mb-2">
+  <p class="text-rabo-dark-blue font-semibold">{{ transactionsByDay.id | date: 'longDate' }}</p>
   @for (transaction of transactionsByDay.transactions; track $index) {
-    <a href="#">
-      <div class="flex justify-between my-8">
-        <span>{{ transaction.otherParty?.name ? transaction.otherParty?.name : transaction.description }}</span>
-        <span>{{ transaction.amount < 0 ? transaction.amount : '+' + transaction.amount }}</span>
+    <a [routerLink]="['/transactions', transactionsByDay.id, transaction.id]">
+      <div class="flex justify-between mt-8">
+        <p>{{ transaction.otherParty?.name ? transaction.otherParty?.name : transaction.description }}</p>
+         @if (transaction.amount < 0) {
+          <p>{{ transaction.amount | currency:'':'€':'0.0-2' }}</p>
+         } @else {
+          <p>+{{ transaction.amount | currency:'':'€':'0.0-2' }}</p>
+         }
       </div>
-      <!-- <hr class="h-px bg-gray-200 border-0"> -->
     </a>
   }
 </div>

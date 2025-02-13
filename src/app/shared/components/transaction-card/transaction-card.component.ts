@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Transactions } from '../../../core/models/transactions.model';
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-transaction-card',
-  imports: [DatePipe],
+  imports: [DatePipe, CurrencyPipe, RouterLink],
   templateUrl: './transaction-card.component.html',
   styleUrl: './transaction-card.component.css'
 })

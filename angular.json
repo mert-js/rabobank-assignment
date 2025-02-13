@@ -10,7 +10,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "nl-NL"
+        "sourceLocale": "nl"
       },
       "architect": {
         "build": {
@@ -19,7 +19,7 @@
             "outputPath": "dist/rabobank-assignment",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "localize": ["nl-NL"],
+            "localize": ["nl"],
             "polyfills": [
               "zone.js",
               "@angular/localize/init"

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Transactions } from '../../core/models/transactions.model';
 import { TransactionService } from '../../core/services/transaction.service';
 import { TransactionCardComponent } from "../../shared/components/transaction-card/transaction-card.component";
@@ -9,7 +9,7 @@ import { TransactionCardComponent } from "../../shared/components/transaction-ca
   templateUrl: './transaction-list.component.html',
   styleUrl: './transaction-list.component.css'
 })
-export class TransactionListComponent {
+export class TransactionListComponent implements OnInit {
   transactionsByDay: Transactions[] = [];
 
   private transactionService = inject(TransactionService);
