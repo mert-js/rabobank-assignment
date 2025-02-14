@@ -19,7 +19,9 @@
             "outputPath": "dist/rabobank-assignment",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "localize": ["nl"],
+            "localize": [
+              "nl"
+            ],
             "polyfills": [
               "zone.js",
               "@angular/localize/init"
@@ -104,13 +106,46 @@
               "src/**/*.html"
             ]
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "rabobank-assignment:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rabobank-assignment:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "rabobank-assignment:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rabobank-assignment:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
     "schematicCollections": [
-      "angular-eslint"
+      "@cypress/schematic",
+      "angular-eslint",
+      "@schematics/angular"
     ]
   }
 }
