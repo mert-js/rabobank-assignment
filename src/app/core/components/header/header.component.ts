@@ -8,5 +8,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+navigation = [
+  { name: 'Overzicht', link: '/transactions' },
+  { name: 'Inzicht', link: '/transactions' },
+  { name: 'Store', link: '/transactions' },
+  { name: 'Service', link: '/transactions' },
+]
 }

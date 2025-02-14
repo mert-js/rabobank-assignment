@@ -14,7 +14,7 @@ export class TransactionListComponent implements OnInit {
 
   private transactionService = inject(TransactionService);
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.transactionService.getTransactions().subscribe(data => {
       this.transactionsByDay = data
         .map(day => ({
