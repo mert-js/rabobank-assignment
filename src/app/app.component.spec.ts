@@ -1,10 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AppComponent', () => {
+  let mockActivatedRoute: any;
+
   beforeEach(async () => {
+    mockActivatedRoute = { snapshot: { paramMap: { get: () => null } } };
+
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [{ provide: ActivatedRoute, useValue: mockActivatedRoute }]
     }).compileComponents();
   });
 
