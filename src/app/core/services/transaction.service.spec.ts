@@ -45,7 +45,7 @@ describe('TransactionService', () => {
     httpTesting.verify();
   });
 
-  it('should fetch and transform transactions', () => {
+  it('should fetch all transactions', () => {
     service.getTransactions().subscribe((transactions) => {
       expect(transactions).toEqual(expectedData);
       expect(transactions[0].transactions[0].amount).toBe(90);
