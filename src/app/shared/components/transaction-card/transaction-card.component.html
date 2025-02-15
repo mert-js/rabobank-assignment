@@ -5,9 +5,9 @@
       <div class="flex justify-between">
         <span>{{ transaction.otherParty?.name ? transaction.otherParty?.name : transaction.description }}</span>
          @if (transaction.amount < 0) {
-          <span>{{ transaction.amount | currency:'':'€':'0.0-2' }}</span>
+          <span>{{ transaction.amount | currency:'':'':'0.0-2' }}</span>
          } @else {
-          <span>+{{ transaction.amount | currency:'':'€':'0.0-2' }}</span>
+          <span>+{{ transaction.amount | currency:'':'':'0.0-2' }}</span>
          }
       </div>
     </a>
