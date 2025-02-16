@@ -62,4 +62,4 @@ npm run e2e
 📌 Spinner  
 📌 ...
 
-## 🎉 Happy Coding! 🚀
+### 🎉 Happy Coding! 🚀
