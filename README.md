@@ -1,59 +1,65 @@
-# RabobankAssignment
+# 🚀 Transactions - Assignment Rabobank
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+The transactions application is built with Angular 19 and allows users to view their transactions in a timeline. The transactions are grouped and ordered, with the latest transactions on top. The timeline displays the name of the other party and also the amount of the transaction. Additionally, the user can click on a single transaction to see the full details. Styling-wise the applications tries to mimic the styling of Rabobank as much as possible.
 
-## Development server
+## 🎯 Features  
+✅ Error Handling with an Error Component  
+✅ Unit Testing with Jasmine  
+✅ End-to-End Testing with Cypress  
+✅ Responsive Design with separate Desktop & Mobile styling
 
-To start a local development server, run:
+## ⚡ Tech Stack 
+| Technology        | Description                  |
+|------------------|------------------------------|
+| **Angular 19**  | Frontend Framework           |
+| **RxJS**         | Reactive State Management    |
+| **Tailwind CSS** | Styling & Theming            |
+| **Jasmine**         | Unit Testing                 |
+| **Cypress**      | End-to-End Testing           |
+| **ESLint + Husky** | Code Quality       |
 
-```bash
-ng serve
+## 🔧 Installation & Setup  
+
+### 📂 Clone the Repository  
+```shell
+git clone https://github.com/mert-js/rabobank-assignment.git
+cd rabobank-assignment
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+### 📦 Install Dependencies
+```shell
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 🏗️ Start Development Server
+```shell
+npm start
+```
+The application runs on http://localhost:4200
 
-```bash
-ng generate --help
+### 📡 Start API Mock Server
+```shell
+cd backend
+npm run start:windows
+npm run start:mac
 ```
 
-## Building
+## 🧪 Testing
 
-To build the project run:
-
-```bash
-ng build
+### ✅ Unit Testing
+```shell
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+### 🎭 End-to-End Testing
+```shell
+npm run e2e
 ```
 
-## Running end-to-end tests
+## 🛠️ Future Improvements
+📌 Set transactions to State  
+📌 Custom error messages  
+📌 Spinner  
+📌 ...
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🎉 Happy Coding! 🚀
