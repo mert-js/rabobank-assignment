@@ -15,7 +15,7 @@ export class ErrorHandlingService implements ErrorHandler {
 
   router = inject(Router);
 
-  async handleError(error: any) {
+  handleError(error: any) {
     console.error(error);
     this.setErrorState(true);
     this.router.navigate(['/error']);

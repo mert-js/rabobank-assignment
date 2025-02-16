@@ -5,8 +5,19 @@
   --color-rabo-light-blue: #0059ff;
   --color-rabo-orange: #ff6600;
   --color-rabo-gray: #f6f6f6;
+  --color-rabo-dark-orange: #f05800;
 }
 
 body {
   background-color: var(--color-rabo-gray);
+}
+
+button.primary:hover {
+  cursor: pointer;
+  background-color: var(--color-rabo-light-blue);
+}
+
+button.secondary:hover {
+  cursor: pointer;
+  background-color: var(--color-rabo-dark-orange);
 }
