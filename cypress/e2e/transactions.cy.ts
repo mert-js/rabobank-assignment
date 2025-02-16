@@ -15,11 +15,23 @@ describe('Transactions E2E test', () => {
     });
   });
 
-  it('should navigate to the transaction details page when a transaction is clicked', () => {
+  it('should navigate to the transaction details page when a transaction is clicked and display correct transaction details', () => {
     cy.wait('@getTransactions');
 
     cy.get('.transaction-card a').first().click();
 
     cy.url().should('include', '/transactions/2022-11-08/1');
+
+    cy.get('.transaction-detail').within(() => {
+      cy.contains('h2', 'Mister XX');
+      cy.contains('span', 'NL00RABO0123456789');
+      cy.contains('h3', '+€ 21,07');
+      cy.contains('label[for="transaction-date"]', 'Uitvoering');
+      cy.contains('span[name="transaction-date"]', '08-11-2022 15:30');
+      cy.contains('label[for="other-party-iban"]', 'Rekening');
+      cy.contains('span[name="other-party-iban"]', 'NL00RABO0123456789');
+      cy.contains('label[for="transaction-description"]', 'Omschrijving');
+      cy.contains('span[name="transaction-description"]', 'Some interesting description');
+    });
   });
 })

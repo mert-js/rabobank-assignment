@@ -11,25 +11,25 @@
     </h3>
   </div>
   <div class="flex flex-col mb-3">
-    <span class="text-rabo-dark-blue font-semibold">
+    <label for="transaction-date" class="text-rabo-dark-blue font-semibold">
       Uitvoering
-    </span>
-    <span>{{ transaction?.timestamp | date: 'short' }}</span>
+    </label>
+    <span name="transaction-date">{{ transaction?.timestamp | date: 'short' }}</span>
   </div>
   <hr class="h-px bg-gray-200 border-0 my-8">
   @if (transaction?.otherParty) {
     <div class="flex flex-col">
-      <span class="text-rabo-dark-blue font-semibold">
+      <label for="other-party-iban" class="text-rabo-dark-blue font-semibold">
         Rekening
-      </span>
-      <span>{{ transaction?.otherParty?.iban }}</span>
+      </label>
+      <span name="other-party-iban">{{ transaction?.otherParty?.iban }}</span>
     </div>
     <hr class="h-px bg-gray-200 border-0 my-8">
   }
   <div class="flex flex-col">
-    <span class="text-rabo-dark-blue font-semibold">
+    <label for="transaction-description" class="text-rabo-dark-blue font-semibold">
       Omschrijving
-    </span>
-    <span>{{ transaction?.description }}</span>
+    </label>
+    <span name="transaction-description">{{ transaction?.description }}</span>
   </div>
 </div>
