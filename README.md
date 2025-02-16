@@ -37,12 +37,13 @@ npm start
 ```
 The application runs on http://localhost:4200
 
-### 📡 Start API Mock Server
+### 📡 Start Mock Backend Server
 ```shell
 cd backend
 npm run start:windows
 npm run start:mac
 ```
+The mock backend server runs on http://localhost:8080
 
 ## 🧪 Testing
 
