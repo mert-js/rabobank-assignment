@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Transactions } from '../models/transactions.model';
+import { ErrorHandlingService } from './error-handling.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Transactions } from '../models/transactions.model';
 export class TransactionService {
   private API_URL = 'http://localhost:8080/api/transactions';
   private http = inject(HttpClient);
+  private errorHandlingService = inject(ErrorHandlingService);
 
   getTransactions(): Observable<Transactions[]> {
     return this.http.get<{ days: Transactions[] }>(this.API_URL).pipe(
@@ -20,7 +22,11 @@ export class TransactionService {
             amount: transaction.currencyCode === 'USD' ? transaction.amount * (transaction.currencyRate ?? 1) : transaction.amount
           }))
         }))
-      )
+      ),
+      catchError((error) => {
+        this.errorHandlingService.handleError(error);
+        return throwError(() => error);
+      })
     );
   }
 }

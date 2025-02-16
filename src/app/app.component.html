@@ -2,8 +2,10 @@
   <app-header />
   <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 sm:py-16">
     <div class="mb-5">
-      <h1 class="text-2xl text-rabo-light-blue italic sm:text-3xl mb-1">Rabo DirectRekening</h1>
-      <span class="text-md sm:text-xl">€ 678,18</span>
+      @if ((hasError | async) === false) {
+        <h1 class="text-2xl text-rabo-light-blue italic sm:text-3xl mb-1">Rabo DirectRekening</h1>
+        <span class="text-md sm:text-xl">€ 678,18</span>
+      }
     </div>
     <router-outlet />
   </div>
