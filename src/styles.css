@@ -11,13 +11,3 @@
 body {
   background-color: var(--color-rabo-gray);
 }
-
-button.primary:hover {
-  cursor: pointer;
-  background-color: var(--color-rabo-light-blue);
-}
-
-button.secondary:hover {
-  cursor: pointer;
-  background-color: var(--color-rabo-dark-orange);
-}
