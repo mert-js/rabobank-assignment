@@ -61,7 +61,7 @@ npm run e2e
 📌 Set transactions to State  
 📌 Custom error messages  
 📌 Husky Git Hooks  
-📌 Spinner
+📌 Spinner  
 📌 ...
 
 ### 🎉 Happy Coding! 🚀
